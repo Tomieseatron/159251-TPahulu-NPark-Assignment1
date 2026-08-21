@@ -1,17 +1,29 @@
 package nz.ac.massey.cs251;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import javax.swing.*;
+import java.awt.*;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+public class Main {
+    static void main(String[] args) {
+        //Create an empty window for the text editor
+        //Set it to exit the program when you close it
+        //Set the window to fit the whole screen
+        //Set the minimum size to be 800 by 600
+        JFrame textWindow = new JFrame("Text Window");
+        textWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        textWindow.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        textWindow.setMinimumSize(new Dimension(800, 600));
+
+        //Adds a text area into the window.
+        JTextArea textArea = new JTextArea();
+
+        //Sets a container to the full size of the JFrame
+        Container text = textWindow.getContentPane();
+
+        //Adds the text area to the container
+        text.add(textArea);
+
+        //Makes the JFrame visible
+        textWindow.setVisible(true);
     }
 }
