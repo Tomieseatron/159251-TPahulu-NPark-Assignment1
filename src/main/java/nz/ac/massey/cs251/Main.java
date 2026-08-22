@@ -14,6 +14,28 @@ public class Main {
         textWindow.setExtendedState(JFrame.MAXIMIZED_BOTH);
         textWindow.setMinimumSize(new Dimension(800, 600));
 
+        // Adds a menu bar with File, Edit, Search, View, and Help
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        JMenu searchMenu = new JMenu("Search");
+        JMenu viewMenu = new JMenu("View");
+        JMenu manageMenu = new JMenu("Manage");
+        JMenu helpMenu = new JMenu("Help");
+        menuBar.add(fileMenu);
+        menuBar.add(searchMenu);
+        menuBar.add(viewMenu);
+        menuBar.add(manageMenu);
+        menuBar.add(helpMenu);
+        textWindow.setJMenuBar(menuBar);
+        textWindow.setSize(800, 600);
+
+        // Adds sub-menu items
+        fileMenu.add(new JMenuItem("New"));
+        fileMenu.add(new JMenuItem("Open"));
+        fileMenu.add(new JMenuItem("Save"));
+        fileMenu.add(new JMenuItem("Exit"));
+        fileMenu.add(new JMenuItem("Print"));
+
         //Adds a text area into the window.
         JTextArea textArea = new JTextArea();
 
